@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @project = Project.new
+    
     @tasks = Task.all
     @task = Task.new
   end
@@ -28,8 +29,5 @@ private
     params[:project].permit(:name)
   end  
 
-  def task_params
-    params[:project].permit(:name)
-  end
 
 end
