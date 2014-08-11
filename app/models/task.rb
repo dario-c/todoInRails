@@ -6,6 +6,11 @@ class Task < ActiveRecord::Base
     self.status ||= "todo"
   end
 
+  def status
+    ['todo', 'doing', 'done']
+  end
+
+
   validates :name, presence: true
   validates :status, inclusion: { in: %w(todo doing done),
     message: "%{value} is not a valid status"}

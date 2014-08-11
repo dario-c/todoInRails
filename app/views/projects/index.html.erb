@@ -1,12 +1,36 @@
 <h1>Projects</h1>
+
+<h3>Projects list with tasks</h3>
+
 <ul>
  <% @projects.each do |project| %>
     <li> <%= project.name %> </li>
   <% end %>
  </ul>
 
+<h3>Create new project</h3>
 
 <%= form_for @project, url: {action:"create"} do |f| %>
-  <%= f.text_field :name %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
   <%= f.submit "Create" %>
+
 <% end %>
+
+
+<h3>Register new task</h3>
+
+<%= form_for @task, url: {action:"create"} do |f| %>
+
+  <%= f.label :project %>
+  <%= f.select :project_id, options_for_select(@projects.pluck(:name, :id)) %> 
+  </br>
+  <%= f.label "Description" %>
+  <%= f.text_field :name %>
+  </br>
+  <%= f.label "Status" %>
+  <%= f.select :project_id, options_for_select(@task.status)%> 
+  </br>
+  <%= f.submit "Asign task" %>
+<% end %>
+
