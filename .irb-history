@@ -1,3 +1,16 @@
-x = Project.create
-x = Project.create!
+x = Project.creat
+
+exit\
+Project.create!
+Project.create!
+Task.create!
+Task.create(name='example')
+Task
+Tasks
+Task.create
+task =_
+task
+task.destroy
+task
+task.destroy!
 exit
