@@ -65,5 +65,5 @@ test:
 production:
   <<: *default
   database: projects_and_tasks_app_production
-  username: projects_and_tasks_app
+  username: Dario
   password: <%= ENV['PROJECTS_AND_TASKS_APP_DATABASE_PASSWORD'] %>

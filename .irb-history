@@ -1,0 +1,3 @@
+x = Project.create
+x = Project.create!
+exit
