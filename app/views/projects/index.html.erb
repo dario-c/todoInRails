@@ -1,0 +1,12 @@
+<h1>Projects</h1>
+<ul>
+ <% @projects.each do |project| %>
+    <li> <%= project.name %> </li>
+  <% end %>
+ </ul>
+
+
+<%= form_for @project, url: {action:"create"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create" %>
+<% end %>

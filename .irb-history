@@ -14,3 +14,12 @@ task.destroy
 task
 task.destroy!
 exit
+Project.all
+Project.all
+exit
+Project.a;;
+Project.all
+Project.all
+x = Project.create name: "Name1"
+Project.all
+exit
