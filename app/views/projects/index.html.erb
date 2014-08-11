@@ -1,10 +1,18 @@
 <h1>Projects</h1>
 
 <h3>Projects list with tasks</h3>
+<h5>filter by [all|todo|doing|done]</h5>
 
 <ul>
  <% @projects.each do |project| %>
-    <li> <%= project.name %> </li>
+    <li> <%= project.name %> 
+
+      <ul>
+      <% project.tasks.each do |task| %>
+      <li> <%= task.name %> @ <%= task.status %>
+      <% end %>
+      </ul>
+    </li>
   <% end %>
  </ul>
 
@@ -20,7 +28,7 @@
 
 <h3>Register new task</h3>
 
-<%= form_for @task, url: {action:"create"} do |f| %>
+<%= form_for @task, url: {action:"create", controller:"tasks"} do |f| %>
 
   <%= f.label :project %>
   <%= f.select :project_id, options_for_select(@projects.pluck(:name, :id)) %> 
@@ -29,7 +37,7 @@
   <%= f.text_field :name %>
   </br>
   <%= f.label "Status" %>
-  <%= f.select :project_id, options_for_select(@task.status)%> 
+  <%= f.select :status, options_for_select(@task.list_status)%> 
   </br>
   <%= f.submit "Asign task" %>
 <% end %>

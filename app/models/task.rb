@@ -6,7 +6,7 @@ class Task < ActiveRecord::Base
     self.status ||= "todo"
   end
 
-  def status
+  def list_status
     ['todo', 'doing', 'done']
   end
 

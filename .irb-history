@@ -23,3 +23,6 @@ Project.all
 x = Project.create name: "Name1"
 Project.all
 exit
+Task.all
+Task.all
+exit

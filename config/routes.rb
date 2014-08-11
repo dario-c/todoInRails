@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
  resources :projects, only: [:create, :new, :index]
+ resources :tasks, only: [:create, :new, :index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
